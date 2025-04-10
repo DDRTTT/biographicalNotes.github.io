@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杨铭 - 前端开发工程师</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --bg-color: #ffffff;
+            --text-color: #333;
+            --card-bg: #f8f9fa;
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #3498db;
+            --bg-color: #1a1a1a;
+            --text-color: #f8f9fa;
+            --card-bg: #2c2c2c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: var(--transition);
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 主题切换 */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            z-index: 100;
+        }
+
+        /* 标题样式 */
+        h1, h2 {
+            color: var(--primary-color);
+            margin: 1.5rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        h2 i {
+            margin-right: 10px;
+        }
+
+        /* 个人信息 */
+        .header {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* 经历卡片 */
+        .experience-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .company {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+            max-width: 70%;
+        }
+
+        .date {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .tech-tag {
+            background: rgba(52, 152, 219, 0.15);
+            color: var(--primary-color);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        ul {
+            padding-left: 2rem;
+            margin: 1rem 0;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .experience-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .company {
+                max-width: 100%;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <i class="fas fa-moon theme-toggle"></i>
+
+        <!-- 个人信息 -->
+        <header class="header">
+            <h1>杨铭</h1>
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> +86 17521519354</span>
+                <span><i class="fas fa-envelope"></i> a503088637@126.com</span>
+                <span><i class="fas fa-graduation-cap"></i> 大专</span>
+            </div>
+        </header>
+
+        <!-- 工作经历 -->
+        <section>
+            <h2><i class="fas fa-briefcase"></i> 工作经历</h2>
+
+            <!-- 网易云音乐 -->
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="company">网易 网易云音乐播放器新车载app鸿蒙RN工程 （中软国际）</div>
+                    <div class="date">2024/06 - 2024/10</div>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">React Native 0.70</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">HarmonyOS</span>
+                    <span class="tech-tag">MobX</span>
+                </div>
+                <ul>
+                    <li>应用技术:  react native（RN 0.70版本+react18+mobx+typescript+FlashList+网易react native ui组件库）</li>
+                    <li>项目描述：react native基于react native 0.70版本，Metro v0.72.4。容器层基于native网易改版多平台容器，兼容鸿蒙os。页面列表组件使用FlashList再封装。语法使用TypeScript6 ，react hook，eslint8语法开发。动画库使用react-native-reanimated</li>
+                    <li>工作内容：负责react页面业务模块，在满足兼容鸿蒙系统特性的情况下使用ts hook语法与FlashList列表组件开发车载网易云音乐页面，二级列表业详情页，使用网易封装的jdk，sdk，rpc实现联网断网播放功，本地续播，联网续播功能与本地存储功能。</li>
+                    <li>团队规模：12人</li>
+                </ul>
+            </div>
+
+            <!-- 宁德时代 -->
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="company">宁德时代 ECD/MCC数据中台 TOM中台 IE一站式报表系统（软通动力）</div>
+                    <div class="date">2023/08 - 2024/02</div>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Umi</span>
+                    <span class="tech-tag">Ant Design</span>
+                    <span class="tech-tag">ECharts</span>
+                </div>
+                <ul>
+                    <li>应用技术:  1、 umi（react+mobx+antd） </li>
+                    <li>项目描述：前端系统基于umi框架，使用路由集成多项目组合，以定制工业规则，分配规则，物料，工序领料等工业专业规则系统，以文字，各种css样式，EChart展示工业化4.0 MES,SPA数据</li>
+                    <li>工作内容：根据需求定制从0开发。</li>
+                    <li>团队规模：12人</li>
+                </ul>
+            </div>
+
+            <!-- 宁德时代 -->
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="company">宁德时代 FWR报表系统 （软通动力）</div>
+                    <div class="date">2023/08 - 2024/02</div>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Umi</span>
+                    <span class="tech-tag">Ant Design</span>
+                    <span class="tech-tag">ECharts</span>
+                </div>
+                <ul>
+                    <li>应用技术:  1、 umi（react+mobx+antd） </li>
+                    <li>项目描述：前端系统基于umi框架，使用路由集成多项目组合，以文字，各种css样式，EChart展示工业化4.0 MES数据</li>
+                    <li>工作内容：以系统原有的jquery开发的报表系统进行2次开发。</li>
+                    <li>团队规模:9。</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="company">国海证券-资管业务管理平台（赢时胜）</div>
+                    <div class="date">2022/07-2023/04</div>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Umi</span>
+                    <span class="tech-tag">Ant Design</span>
+                    <span class="tech-tag">ECharts</span>
+                    <span class="tech-tag">Formilyjs2</span>
+                </div>
+                <ul>
+                    <li>应用技术:  1、 umi（react+dva.js+antd+single-spa+formilyjs2）</li>
+                    <li>项目描述：前端基于umi框架，使用single-spa微前端技术内嵌入整合老项目框架，嵌入office SDK在线编辑模块。</li>
+                    <li>工作内容：升级框架公共组件库，开发交互性表单页面，负责维护修复页面bug，优化react造成的页面性能瓶颈。</li>
+                    <li>团队规模:8。</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="company">华泰柏瑞-招募说明书 （赢时胜）</div>
+                    <div class="date">2022/07-2023/04</div>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Umi</span>
+                    <span class="tech-tag">Ant Design</span>
+                    <span class="tech-tag">ECharts</span>
+                    <span class="tech-tag">Formilyjs2</span>
+                </div>
+                <ul>
+                    <li>应用技术:  1、 umi（react+dva.js+antd3+antd4+single-spa+ formilyjs2）</li>
+                    <li>项目描述：前端系基于umi框架，使用single-spa微前端技术内嵌入整合老项目框架，嵌入office SDK在线编辑模块，分产品中心，底稿系统，资金运用与数据中心等多种业务模块。</li>
+                    <li>工作内容：升级框架公共组件库，独立负责重构前端所有不合理无法维护页面，重构配置化页面代码化满足客户需求并处理复杂的交互页面。</li>
+                    <li>团队规模:7</li>
+                </ul>
+            </div>
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="company">国泰君安:全链接后台统一管理系统 （中畅信息）</div>
+                    <div class="date">2020/05-2022/07</div>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">jquery</span>
+                    <span class="tech-tag">next.js</span>
+                    <span class="tech-tag">Ant Design</span>
+                    <span class="tech-tag">BizChart</span>
+                </div>
+                <ul>
+                    <li>应用技术:  next.js（react+antd+BizChart）系列 国泰低代码流程框架  jquery</li>
+                    <li>项目描述：前端基于next.js框架，使用国泰前端流程低代码平台，集成国泰产报表，活动，指标等多种业务场景。</li>
+                    <li>工作内容：负责维护修复页面bug，销售活动页，开发复杂且大量表单页面，业务流程图系列框架编写业务流程，BizChart，EChart图形可视化数据页面编写，指标页面，报表表单，大小文件导入导出。</li>
+                    <li>团队规模:20</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="company">上海尚工机器人 机器商城 机器林</div>
+                    <div class="date">2018/06-2019/03</div>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">hbuilder</span>
+                    <span class="tech-tag">jquery</span>
+                    <span class="tech-tag">css3</span>
+                </div>
+                <ul>
+                    <li>应用技术:  hbuilder+mui+jquer+js</li>
+                    <li>项目描述：结合上海建工集团公开的机器人研发及产业生态布局信息，开发的商城页面，平台集成了机器人数据管理、远程控制及实时监控系统</li>
+                    <li>工作内容：开发与维护商城，对接微信支付，支付宝支付。移动端页面设计开发与维护。</li>
+                    <li>团队规模:20</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="company">佳匠网络</div>
+                    <div class="date">2017/04-2018-06</div>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">jQuery</span>
+                    <span class="tech-tag">vue</span>
+                    <span class="tech-tag">bootstrap</span>
+                    <span class="tech-tag">angularjs</span>
+                </div>
+                <ul>
+                    <li>ESEE模特 www.eseemodel.com</li>
+                    <li>上海弘途建筑装饰 www.hotush.com</li>
+                    <li>峰力助听器 www.phonak.com.cn</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="company">苏州跨界科技 校园管理系统</div>
+                    <div class="date">2016-2017</div>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">jQuery</span>
+                </div>
+                <ul>
+                    <li>项目描述：校园班级名册管理系统 用于班级名单Excel导入导出</li>
+                    <li>工作内容：开发与维护。</li>
+                </ul>
+            </div>
+
+        </section>
+
+        <!-- 专业技能 -->
+        <section>
+            <h2><i class="fas fa-code"></i> 专业技能</h2>
+            <div class="experience-card">
+                <div class="tech-stack">
+                    <span class="tech-tag">React/Redux/MobX</span>
+                    <span class="tech-tag">React Native</span>
+                    <span class="tech-tag">javaScript/TypeScript</span>
+                    <span class="tech-tag">HarmonyOS</span>
+                    <span class="tech-tag">Webpack/Vite</span>
+                    <span class="tech-tag">ECharts/bizCharts</span>
+                </div>
+                <ul>
+                    <li>丰富的前端开发经验，熟悉完整Web开发流程</li>
+                    <li>具备大型项目架构设计和性能优化经验</li>
+                    <li>熟悉微前端架构和跨平台开发</li>
+                    <li>丰富的与后端的对接经验</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // 主题切换
+        const themeToggle = document.querySelector('.theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.dataset.theme = 
+                document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+            themeToggle.classList.toggle('fa-moon');
+            themeToggle.classList.toggle('fa-sun');
+        });
+
+        // 移动端优化
+        function adjustMobileView() {
+            document.querySelectorAll('.experience-card').forEach(card => {
+                card.style.padding = window.innerWidth < 768 ? '1rem' : '1.5rem';
+            });
+        }
+        window.addEventListener('resize', adjustMobileView);
+        adjustMobileView();
+    </script>
+</body>
+</html>
