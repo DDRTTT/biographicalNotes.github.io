@@ -7,6 +7,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+        /* 全局GPU加速样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* 启用GPU加速 */
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+            will-change: transform;
+            /* 启用硬件加速 */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* 为特定元素添加GPU加速优化 */
+        body, .container, .theme-toggle, .export-buttons, .export-btn,
+        h1, h2, .header, .contact-info, .contact-info span,
+        .experience-card, .experience-header, .company, .date,
+        .tech-stack, .tech-tag, ul, li {
+            /* 启用GPU加速 */
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+            will-change: transform;
+        }
         :root {
             --primary-color: #2c3e50;
             --bg-color: #ffffff;
