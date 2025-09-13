@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>杨铭 - 前端开发工程师</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -132,6 +133,29 @@
             margin: 1rem 0;
         }
 
+         /* 导出按钮 */
+        .export-buttons {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+        }
+
+        .export-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        .export-btn:hover {
+            opacity: 0.9;
+        }
+
         /* 响应式设计 */
         @media (max-width: 768px) {
             .experience-header {
@@ -150,9 +174,9 @@
         }
     </style>
 </head>
-<body>
+<body data-theme="dark">
     <div class="container">
-        <i class="fas fa-moon theme-toggle"></i>
+       <i class="fas fa-sun theme-toggle"></i>
 
         <!-- 个人信息 -->
         <header class="header">
@@ -167,6 +191,55 @@
         <!-- 工作经历 -->
         <section>
             <h2><i class="fas fa-briefcase"></i> 工作经历</h2>
+            <!-- 京东 -->
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="company">京东 企业职能项目组/joyHR梧桐 （润和）</div>
+                    <div class="date">2025/07 - 至今</div>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">Taro</span>
+                    <span class="tech-tag">RN</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">H5混合</span>
+                    <span class="tech-tag">zustand</span>
+                </div>
+                <ul>
+                    <li>应用技术:react18+antd5+tanstack系列+valtio</li>
+                    <li>项目描述：京东的招聘系统,基本的中后台流程节点表格项目,满足于各部门之间招聘流程的一个平台,包括对接各种AI筛选功能模块</li>
+                    <li>工作内容：从需求模块开发到各种表格组件优化，重渲染优化,开发各种流程节点下的业务页面,路由和请求是tanstack系列,状态管理用的是valtio内存快照，
+                        还是基本的增删改查,以业务为主导驱动,主要工作核心还是样式和表单业务。</li>
+                    <li>团队规模：不定</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <div class="company">京东 我京项目组 （讯锡）</div>
+                    <div class="date">2025/04 - 2025/7</div>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">Taro</span>
+                    <span class="tech-tag">RN</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">H5混合</span>
+                    <span class="tech-tag">zustand</span>
+                </div>
+                <ul>
+                    <li>京东商城app通天塔</li>
+                    <li>应用技术:taro（内嵌react16.8/h5）混合开发</li>
+                    <li>项目描述：基于 Taro 框架实现 H5 与原生端混合开发模式，支撑用户端核心场景的高效迭代。负责[我的] 「店铺关注」与「浏览记录」模块的重构开发落地</li>
+                    <li>工作内容：「我的 - 店铺关注 - 店铺」页面开发，实现关注列表滑动无限分页加载、店铺信息实时更新及取消关注交等业务互逻辑，兼容安卓，ios与对应平板端展示；​
+                        完成「我的 - 浏览记录 - 店铺」页面功能，包括暗黑模式，宽屏等业务要求；​
+                        基于 React 16.8 特性封装通用列表组件，状态管理从redux替换成zustand，减少redux重复代码量 30%，memo优化减少大量重渲染。</li>
+                    <li>团队规模：7</li>
+                    <br>
+                    <li>cms中台管理系统（猎户座/黄流）</li>
+                    <li>应用技术:umi（react+dva.js+antd+百度amis低代码）</li>
+                    <li>项目描述：前端系统基于umi框架，微前端嵌入百度低代码平台，使用表单控制APP端口各种布局与活动页面。</li>
+                    <li>开发与维护cms表单页面代码与低代码，如权益系列，底部tips，侧边栏等等业务模块,保持配置配合运营上架活动模块</li>
+                </ul>
+            </div>
 
             <!-- 网易云音乐 -->
             <div class="experience-card">
@@ -379,6 +452,7 @@
         }
         window.addEventListener('resize', adjustMobileView);
         adjustMobileView();
+
     </script>
 </body>
 </html>
